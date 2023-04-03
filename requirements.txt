@@ -1,7 +1,0 @@
-dotenv
-os
-requests
-pandas
-csv
-sqlite3
-datetime
