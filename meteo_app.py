@@ -13,15 +13,22 @@ api_key = os.getenv("API_KEY")
 url = "https://api.openweathermap.org/data/2.5/weather"
 villes = ["Paris", "Marseille", "Lyon", "Toulouse", "Nice", "Nantes", "Montpellier", "Strasbourg", "Bordeaux", "Lille", "Rennes", "Reims", "Le Havre", "Saint-Étienne", "Toulon", "Grenoble", "Dijon", "Angers", "Nîmes", "Villeurbanne"]
 
-def get_meteo_france(ville):
+def get_meteo_france(ville : str)-> dict:
+    """
+        Récupère les informations météorologiques pour une ville donnée en utilisant l'API OpenWeatherMap.
+        Args:
+            ville (str): Nom de la ville pour laquelle récupérer les informations météorologiques.
+        Returns:
+            dict: Un dictionnaire contenant les informations météorologiques pour la ville donnée.
+    """
     params = {
         "q": ville + ",FR",
         "appid": api_key,
         "units": "metric", 
         "lang": "fr"
     }
+    
     response = requests.get(url, params=params)
-
     if response.status_code == 200:
         rep_json = response.json()
         meteo_france = {
@@ -46,7 +53,14 @@ def get_meteo_france(ville):
     else:
         print(response.status_code)
 
-def infos_villes(villes):
+def infos_villes(villes: list) -> list:
+    """
+        Récupère les informations de base (nom, latitude et longitude) pour une liste de villes en utilisant la fonction get_meteo_france.
+        Args:
+            villes (list): Liste des noms de villes pour lesquelles récupérer les informations.
+        Returns:
+            list: Une liste de dictionnaires contenant les informations de base pour chaque ville.
+    """
     infos = []
     for ville in villes:
         mf = get_meteo_france(ville)
@@ -57,7 +71,14 @@ def infos_villes(villes):
         })
     return infos
 
-def generer_popup(meteo_popup):
+def generer_popup(meteo_popup : dict) -> str:
+    """
+        Génère le contenu HTML d'un popup pour afficher les informations météorologiques d'une ville.
+        Args:
+            meteo_popup (dict): Un dictionnaire contenant les informations météorologiques d'une ville.
+        Returns:
+            str: Une chaîne de caractères HTML formatée avec les informations météorologiques de la ville.
+    """
     contenu = f"""
     <b>{meteo_popup['Ville']}</b><br>
     Température actuelle: {meteo_popup['Température actuelle C°']}°C<br>
