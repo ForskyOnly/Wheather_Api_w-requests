@@ -27,9 +27,9 @@ def get_meteo_france(ville : str)-> dict:
         "lang": "fr"
     }
     
-    response = requests.get(url, params=params)
-    if response.status_code == 200:
-        rep_json = response.json()
+    reponse = requests.get(url, params=params)
+    if reponse.status_code == 200:
+        rep_json = reponse.json()
         meteo_france = {
             "Ville": ville,
             "Température actuelle C°": rep_json["main"]["temp"],
@@ -50,7 +50,7 @@ def get_meteo_france(ville : str)-> dict:
             meteo_france["Longitude"] = rep_json["coord"]["lon"]
         return meteo_france
     else:
-        print(response.status_code)
+        print(reponse.status_code)
 
 def infos_villes(villes: list) -> list:
     """
