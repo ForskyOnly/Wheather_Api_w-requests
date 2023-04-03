@@ -5,7 +5,6 @@ import os
 from dotenv import load_dotenv
 from streamlit_folium import folium_static
 import folium
-import pandas as pd
 
 load_dotenv()
 
