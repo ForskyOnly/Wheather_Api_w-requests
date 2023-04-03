@@ -41,7 +41,7 @@ Ce projet utilise l'API OpenWeatherMap pour récupérer les informations météo
 
 ## Utilisation
 
-1. Exécutez le fichier 'meteo_france.ipynb' pour récupérer les informations météorologiques et les stocker dans un fichier CSV et une base de données SQLite.
+1. Exécutez le fichier `meteo_france.ipynb` pour récupérer les informations météorologiques et les stocker dans un fichier CSV et une base de données SQLite.
 2. Exécutez `streamlit run meteo_app.py` pour lancer l'interface Web Streamlit et visualiser les informations météorologiques sur une carte interactive.
 
 ## Bibliothèques utilisées
