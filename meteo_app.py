@@ -113,7 +113,7 @@ infos = infos_villes(villes)
 st.sidebar.markdown("### Couches de la carte")
 infos_des_villes = st.sidebar.checkbox("Afficher des villes", True)
 
-m = folium.Map(location=[46.227638, 2.213749], zoom_start=6)
+map = folium.Map(location=[46.227638, 2.213749], zoom_start=6)
 
 if infos_villes:
     for info in infos:
@@ -121,6 +121,6 @@ if infos_villes:
         folium.Marker(
             [info["latitude"], info["longitude"]],
             popup=folium.Popup(generer_popup(meteo_popup), max_width=300)
-        ).add_to(m)
+        ).add_to(map)
 
-folium_static(m)
+folium_static(map)
