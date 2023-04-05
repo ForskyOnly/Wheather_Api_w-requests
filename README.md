@@ -1,4 +1,5 @@
 # Projet : Découverte de la librairie requests
+
 Version 1.0
 
 ## Contexte du projet
@@ -16,7 +17,6 @@ Récupérer les informations suivantes et stocker les dans un DataFrame (pandas)
 - Direction du vent
 - Lever du soleil (Attention à bien convertir en information compréhensible pour un humain)
 - Coucher du soleil (Attention à bien convertir en information compréhensible pour un humain)
-
 
 Vous devez récupérer les informations actuelles. Les informations seront d'abord stockés dans un DataFrame et ensuite vous exporterez ce dataframe dans un fichier csv.
 
@@ -36,7 +36,7 @@ Ce projet utilise l'API OpenWeatherMap pour récupérer les informations météo
 ## Installation
 
 1. Clonez ce dépôt.
-2. Installez les dépendances avec `pip install `.
+2. Installez les dépendances avec `pip install`.
 3. Créez un fichier `.env` à la racine du projet et ajoutez-y votre clé d'API OpenWeatherMap sous la forme `API_KEY=votre_clé_d'api`.
 
 ## Utilisation

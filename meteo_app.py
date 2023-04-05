@@ -93,7 +93,7 @@ def generer_popup(meteo_popup : dict) -> str:
     """
     return contenu
 
-ville_selectionnee = st.sidebar.selectbox("Sélectionnez une ville en France", villes)
+ville_selectionnee = st.sidebar.selectbox("Sélectionnez une ville", villes)
 meteo_france = get_meteo_france(ville_selectionnee)
 
 st.write(f"### La Méteo à {meteo_france['Ville']} :")
